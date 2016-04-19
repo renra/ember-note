@@ -1,3 +1,21 @@
-<h2 id="title">Welcome to Ember</h2>
+<div class="container">
+  <div class="row">
+    <h1 id="title">Welcome to Ember</h1>
+  </div>
 
-{{outlet}}
+  {{#if user}}
+    <div class="row">
+      Hello {{user.name}}. Click {{#link-to 'logout'}}here{{/link-to}} to logout.
+    </div>
+  {{else}}
+    <div class="row">
+      Click {{#link-to 'register'}}here{{/link-to}} to register
+    </div>
+
+    <div class="row">
+      Click {{#link-to 'login'}}login{{/link-to}} to login
+    </div>
+  {{/if}}
+
+  {{outlet}}
+</div>
